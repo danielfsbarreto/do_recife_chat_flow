@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-from crewai.flow import Flow, start
+from crewai.flow import Flow, persist, start
 
 from do_recife_chat_flow.agents import DoRecifeAgent
 from do_recife_chat_flow.types import Conversation, Message
 
 
+@persist()
 class DoRecifeChatFlow(Flow[Conversation]):
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
