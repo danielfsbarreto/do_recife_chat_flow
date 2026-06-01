@@ -40,7 +40,7 @@ OPENAI_API_KEY=sk-...
 MONGODB_CONNECTION_STRING=mongodb+srv://...
 ```
 
-`GEMINI_API_KEY` runs the agent (`gemini/gemini-3.5-flash`). `OPENAI_API_KEY`
+`GEMINI_API_KEY` runs the agent (`gemini/gemini-2.5-flash`). `OPENAI_API_KEY`
 embeds the query (`text-embedding-3-large`, 3072-dim) and must match the
 embedder's settings or vector search returns irrelevant results.
 

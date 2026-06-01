@@ -52,7 +52,7 @@ class DoRecifeAgent:
                 "even if the retrieved passages are in a different language."
             ),
             tools=[DoRecifeVectorSearchTool()],
-            llm=LLM(model="gemini/gemini-3.5-flash", stream=True),
+            llm=LLM(model="gemini/gemini-2.5-flash", stream=True),
             verbose=False,
         )
 
