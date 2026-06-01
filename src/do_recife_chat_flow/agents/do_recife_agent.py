@@ -52,7 +52,7 @@ class DoRecifeAgent:
                 "even if the retrieved passages are in a different language."
             ),
             tools=[DoRecifeVectorSearchTool()],
-            llm=LLM(model="openai/gpt-5.5", stream=True),
+            llm=LLM(model="openai/gpt-4.1", stream=True),
             verbose=False,
         )
 
