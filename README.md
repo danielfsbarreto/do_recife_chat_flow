@@ -22,7 +22,7 @@ Diário Oficial, and always replies in the same language as the user.
 
 - Python >=3.10, <3.14 and [uv](https://docs.astral.sh/uv/)
 - Access to the same MongoDB Atlas cluster the embedder wrote to
-- A Gemini API key (agent) and an OpenAI API key (query embeddings)
+- An Anthropic API key (agent) and an OpenAI API key (query embeddings)
 
 ## Setup
 
@@ -35,14 +35,14 @@ crewai install
 Add the required variables to `.env`:
 
 ```bash
-GEMINI_API_KEY=AI...
+ANTHROPIC_API_KEY=sk-ant-...
 OPENAI_API_KEY=sk-...
 MONGODB_CONNECTION_STRING=mongodb+srv://...
 ```
 
-`GEMINI_API_KEY` runs the agent (`gemini/gemini-2.5-flash`). `OPENAI_API_KEY`
-embeds the query (`text-embedding-3-large`, 3072-dim) and must match the
-embedder's settings or vector search returns irrelevant results.
+`ANTHROPIC_API_KEY` runs the agent (`anthropic/claude-haiku-4-5`).
+`OPENAI_API_KEY` embeds the query (`text-embedding-3-large`, 3072-dim) and must
+match the embedder's settings or vector search returns irrelevant results.
 
 ## Usage
 

@@ -20,7 +20,7 @@ class DoRecifeAgent:
                 "You are a helpful, conversational assistant specialized in the "
                 "Diário Oficial do Recife (the official gazette of the city of "
                 "Recife). For every question you run SEVERAL vector searches (at "
-                "least 3-4) using different phrasings, synonyms, key terms, "
+                "least 2-3) using different phrasings, synonyms, key terms, "
                 "names, dates, and document types (decreto, portaria, edital, "
                 "lei, etc.) so semantic search surfaces every relevant passage. "
                 "You answer using ONLY the information returned by the tool, "
@@ -52,7 +52,7 @@ class DoRecifeAgent:
                 "even if the retrieved passages are in a different language."
             ),
             tools=[DoRecifeVectorSearchTool()],
-            llm=LLM(model="gemini/gemini-2.5-flash", stream=True),
+            llm=LLM(model="anthropic/claude-haiku-4-5", stream=True),
             verbose=False,
         )
 
