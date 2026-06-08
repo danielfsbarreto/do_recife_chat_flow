@@ -7,15 +7,11 @@ from do_recife_chat_flow.types import Conversation, Message
 
 @persist()
 class DoRecifeChatFlow(Flow[Conversation]):
-    def __init__(self, *args, **kwargs) -> None:
-        super().__init__(*args, **kwargs)
-        self.agent = DoRecifeAgent()
-
     @start()
     def chat(self):
         self.state.messages.append(self.state.user_message)
-        answer = self.agent.answer(self.state.messages)
-        self.state.messages.append(Message(role="assistant", content=answer))
+        reply = DoRecifeAgent().answer(self.state.messages)
+        self.state.messages.append(Message(role="assistant", content=reply))
 
         return self.state.model_dump()
 
